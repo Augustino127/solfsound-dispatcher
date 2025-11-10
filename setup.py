@@ -38,11 +38,18 @@ setup(
         "click>=8.1.0",
         "rich>=13.0.0",
         "tqdm>=4.65.0",
+        "fastapi>=0.104.0",
+        "uvicorn[standard]>=0.24.0",
+        "python-multipart>=0.0.6",
+        "aiofiles>=23.2.0",
+        "flet>=0.21.0",
         "python-dotenv>=1.0.0",
     ],
     entry_points={
         "console_scripts": [
             "solfsound=solfsound.cli:main",
+            "solfsound-web=solfsound.web_server:start_server",
+            "solfsound-desktop=solfsound.desktop_app:main",
         ],
     },
 )

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolfSound Dispatcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 SolfSound Dispatcher</h1>
+            <p class="subtitle">Extraction et Séparation Audio Professionnelle</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section class="card">
+                <h2>📁 Télécharger un Fichier</h2>
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="fileInput" accept="video/*,audio/*" hidden>
+                    <div class="upload-content">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>Cliquez ou glissez un fichier ici</p>
+                        <p class="upload-hint">Vidéo ou Audio (MP4, AVI, MOV, WAV, MP3, etc.)</p>
+                    </div>
+                </div>
+                <div id="fileInfo" class="file-info hidden"></div>
+            </section>
+
+            <!-- Action Selection -->
+            <section class="card" id="actionsSection" style="display: none;">
+                <h2>⚙️ Choisir une Action</h2>
+                <div class="action-buttons">
+                    <button class="action-btn" data-action="extract">
+                        <span class="btn-icon">🎬</span>
+                        <span class="btn-text">Extraire Audio</span>
+                        <span class="btn-desc">Extraire l'audio d'une vidéo</span>
+                    </button>
+                    <button class="action-btn" data-action="separate">
+                        <span class="btn-icon">🎼</span>
+                        <span class="btn-text">Séparer en Stems</span>
+                        <span class="btn-desc">Voix, batterie, basse, etc.</span>
+                    </button>
+                    <button class="action-btn" data-action="analyze">
+                        <span class="btn-icon">📊</span>
+                        <span class="btn-text">Analyser</span>
+                        <span class="btn-desc">Analyser la composition</span>
+                    </button>
+                    <button class="action-btn" data-action="process">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Pipeline Complet</span>
+                        <span class="btn-desc">Tout en une fois</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Options Section -->
+            <section class="card" id="optionsSection" style="display: none;">
+                <h2>🎛️ Options</h2>
+                <div id="optionsContainer"></div>
+                <button class="btn btn-primary" id="processBtn">Lancer le Traitement</button>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="card" id="progressSection" style="display: none;">
+                <h2>⏳ Traitement en Cours</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText" class="progress-text">Initialisation...</p>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card" id="resultsSection" style="display: none;">
+                <h2>✅ Résultats</h2>
+                <div id="resultsContainer"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>SolfSound Dispatcher v1.0.0 | Fait avec ❤️ pour les amateurs de musique</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
