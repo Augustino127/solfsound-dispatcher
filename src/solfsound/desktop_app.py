@@ -61,7 +61,7 @@ class SolfSoundApp:
                 ft.Text(
                     "Extraction et Séparation Audio Professionnelle",
                     size=18,
-                    color=ft.Colors.GREY_400,
+                    color=ft.Colors.GREY_500,
                     text_align=ft.TextAlign.CENTER,
                 ),
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
@@ -86,7 +86,7 @@ class SolfSoundApp:
                 ft.Container(height=10),
                 self.create_file_info_container(),
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.BLUE_GREY_800,
             border_radius=15,
             padding=30,
         )
@@ -106,7 +106,7 @@ class SolfSoundApp:
                     self.create_action_button("🔄", "Pipeline Complet", "process"),
                 ], alignment=ft.MainAxisAlignment.CENTER),
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.BLUE_GREY_800,
             border_radius=15,
             padding=30,
             visible=False,
@@ -119,7 +119,7 @@ class SolfSoundApp:
                 ft.Container(height=10),
                 ft.Column([], ref=ft.Ref[ft.Column]()),  # Dynamic options
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.BLUE_GREY_800,
             border_radius=15,
             padding=30,
             visible=False,
@@ -135,7 +135,7 @@ class SolfSoundApp:
             style=ft.ButtonStyle(
                 padding=20,
                 text_style=ft.TextStyle(size=18),
-                bgcolor=ft.Colors.PRIMARY,
+                bgcolor=ft.Colors.BLUE,
             ),
             visible=False,
         )
@@ -149,7 +149,7 @@ class SolfSoundApp:
                 ft.Container(height=10),
                 self.progress_text,
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.BLUE_GREY_800,
             border_radius=15,
             padding=30,
             visible=False,
@@ -162,7 +162,7 @@ class SolfSoundApp:
                 ft.Container(height=10),
                 ft.Column([], ref=ft.Ref[ft.Column]()),
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
-            bgcolor=ft.Colors.SURFACE_VARIANT,
+            bgcolor=ft.Colors.BLUE_GREY_800,
             border_radius=15,
             padding=30,
             visible=False,
@@ -188,7 +188,7 @@ class SolfSoundApp:
 
     def create_file_info_container(self):
         """Create file info container."""
-        self.file_info_text = ft.Text("", size=14, color=ft.Colors.GREEN_400)
+        self.file_info_text = ft.Text("", size=14, color=ft.Colors.GREEN)
         return ft.Container(
             content=self.file_info_text,
             visible=False,
@@ -203,7 +203,7 @@ class SolfSoundApp:
             ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
             width=200,
             height=120,
-            bgcolor=ft.Colors.SURFACE,
+            bgcolor=ft.Colors.BLUE_GREY_900,
             border_radius=10,
             padding=20,
             ink=True,
@@ -307,7 +307,7 @@ class SolfSoundApp:
                 ft.Text(
                     "L'analyse fournira des informations détaillées sur la composition audio.",
                     size=14,
-                    color=ft.Colors.GREY_400,
+                    color=ft.Colors.GREY_500,
                 )
             )
 
@@ -326,7 +326,7 @@ class SolfSoundApp:
                 ft.Text(
                     "Pipeline complet: Extraction → Séparation → Analyse",
                     size=14,
-                    color=ft.Colors.GREY_400,
+                    color=ft.Colors.GREY_500,
                 ),
             ])
             self.process_model_dd = self.options_column.controls[0]
