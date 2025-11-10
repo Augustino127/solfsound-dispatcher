@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  solfsound-web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./output:/app/output
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+      - solfsound-data:/root/.solfsound
+    environment:
+      - SOLFSOUND_HOST=0.0.0.0
+      - SOLFSOUND_PORT=8000
+      - SOLFSOUND_LOG_LEVEL=INFO
+    restart: unless-stopped
+    networks:
+      - solfsound-network
+
+  # Optional: Redis for caching and queue
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - solfsound-network
+    profiles:
+      - with-redis
+
+volumes:
+  solfsound-data:
+  redis-data:
+
+networks:
+  solfsound-network:
+    driver: bridge
