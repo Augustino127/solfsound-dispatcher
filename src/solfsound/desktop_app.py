@@ -74,7 +74,7 @@ class SolfSoundApp:
                 ft.Text("📁 Sélectionner un Fichier", size=24, weight=ft.FontWeight.BOLD),
                 ft.ElevatedButton(
                     "Choisir un fichier vidéo ou audio",
-                    icon=ft.icons.UPLOAD_FILE,
+                    icon=ft.Icons.UPLOAD_FILE,
                     on_click=lambda _: self.file_picker.pick_files(
                         allowed_extensions=["mp4", "avi", "mov", "mkv", "wav", "mp3", "flac", "ogg"]
                     ),
@@ -130,7 +130,7 @@ class SolfSoundApp:
         # Process Button
         self.process_button = ft.ElevatedButton(
             "Lancer le Traitement",
-            icon=ft.icons.PLAY_ARROW,
+            icon=ft.Icons.PLAY_ARROW,
             on_click=self.process_action,
             style=ft.ButtonStyle(
                 padding=20,
